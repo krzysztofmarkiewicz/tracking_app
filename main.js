@@ -61,9 +61,7 @@ const getPartsOfLink = (name) => deliveryNames.map(el => {
 const makelink = (firstPart, lastPart) => {
     const number = input.value.replace(/\s/g, '')
     if (number === '') {
-        input.innerHTML = `<p>Wprowadź numer przesyłki</p> `
         showAlert()
-        // alert('Wprowadź numer przesyłki')
         return false
     }
     const newLink = firstPart + number + lastPart
@@ -77,7 +75,7 @@ const copyNewLink = (e) => {
         return
     }
     navigator.clipboard.writeText(makelink(firstPart, lastPart))
-    info.innerHTML = `<p><b>Skopiowałeś do schowka link do trackingu </b></p><p><a href="${newLink}" target="_blank">${newLink}</a>
+    info.innerHTML = `<p><b>Skopiowałeś do schowka poniższy link do trackingu </b></p><p><a href="${newLink}" target="_blank">${newLink}</a>
     </p> `
     //     setTimeout(() => {
     //  window.open(newLink, "_blank");        
