@@ -45,7 +45,6 @@ button {
     border: 1px solid #c8c7c7;
 }
 
-
 button:active {
     transform: scale(.9);
     transition: all;
@@ -62,6 +61,8 @@ button:active {
         transform: rotate(0deg);
     }
 }
+
+
 
 #inpost {
     background-image: url("./images/inpost.png");
