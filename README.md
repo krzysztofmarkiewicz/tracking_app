@@ -1,5 +1,5 @@
 # tracking_app
-ww
+
 Miniapp to generate tracking link
 
 Instruction:
