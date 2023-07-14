@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin-top: 30px;
+}
+body {
+    background-color: lightblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+input {
+    width: 500px;
+    height: 40px;
+    margin: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+button {
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    background-size: cover;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    align-self: stretch;
+    border: 1px solid #c8c7c7;
+}
+
+button:active {
+    transform: scale(.9);
+    transition: all;
+}
+.brand-btn{
+    animation: rotateStartBtn 1s ;
+}
+
+@keyframes rotateStartBtn {
+    from{
+        transform: rotate(2160deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+#inpost {
+    background-image: url("./images/inpost.png");
+}
+
+#dpd {
+    background-image: url("./images/dpd.png");
+}
+
+#dhl {
+    background-image: url("./images/dhl.png");
+}
+
+#pocztex {
+    background-image: url("./images/pocztex.png");
+}
+
+#raben {
+    background-image: url("./images/raben.png");
+}
+
+#gls {
+    background-image: url("./images/gls.png");
+}
+
+#fedex {
+    background-image: url("./images/fedex.png");
+}
+
+#pekaes {
+    background-image: url("./images/pekaes.png");
+}
+
+.info{
+    width: 500px;
+    margin: 30px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid black;
+}
+.info p:first-child{
+    margin-bottom: 10px;
+}
+.hide{
+display: none;
+}
+
+@media only screen and (max-width: 520px) {
+    input,.buttons,.info {
+        width: 90%;
+    }
+}
