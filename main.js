@@ -1,6 +1,9 @@
 const buttons = document.querySelectorAll('button')
 const input = document.querySelector('input')
 const info = document.querySelector('.info')
+const alertBox = document.querySelector('.alertWrap')
+const alertInfo=document.querySelector('.alert')
+
 const deliveryNames = [{
     name: 'pocztex',
     firstPart: 'https://www.pocztex.pl/sledzenie-przesylek/?numer=',
@@ -34,6 +37,14 @@ const deliveryNames = [{
     firstPart: 'https://www.pekaes.pl/pl/dla-klienta.html?ShNumber=',
     lastPart: ''
 }]
+const showAlert = (e) => {
+    alertBox.classList.remove('hide')
+    alertInfo.innerText="Wprowadź numer przesyłki"
+setTimeout(() => {
+    alertBox.classList.add('hide')
+}, 1000);
+
+}
 
 const getName = (e) => {
     const name = e.getAttribute('id')
@@ -51,7 +62,8 @@ const makelink = (firstPart, lastPart) => {
     const number = input.value.replace(/\s/g, '')
     if (number === '') {
         input.innerHTML = `<p>Wprowadź numer przesyłki</p> `
-        alert('Wprowadź numer przesyłki')
+        showAlert()
+        // alert('Wprowadź numer przesyłki')
         return false
     }
     const newLink = firstPart + number + lastPart
