@@ -1,6 +1,6 @@
 # tracking_app
 
-Miniapp to generate tracking link
+Mini application for generating tracking links
 
 Instruction:
 1. Paste tracking number
