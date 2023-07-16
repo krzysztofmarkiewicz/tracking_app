@@ -1,80 +1,79 @@
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('.brand-btn')
 const input = document.querySelector('input')
 const info = document.querySelector('.info')
 const alertBox = document.querySelector('.alertWrap')
-const alertInfo=document.querySelector('.alert')
+const alertInfo = document.querySelector('.alert')
 
-const deliveryNames = [{
+const courierCompanies = [{
     name: 'pocztex',
-    firstPart: 'https://www.pocztex.pl/sledzenie-przesylek/?numer=',
-    lastPart: ''
+    firstPartOfLink: 'https://www.pocztex.pl/sledzenie-przesylek/?numer=',
+    lastPartOfLink: ''
 }, {
     name: 'inpost',
-    firstPart: 'https://inpost.pl/sledzenie-przesylek?number=',
-    lastPart: ''
+    firstPartOfLink: 'https://inpost.pl/sledzenie-przesylek?number=',
+    lastPartOfLink: ''
 }, {
     name: 'dpd',
-    firstPart: 'https://tracktrace.dpd.com.pl/parcelDetails?typ=1&p1=',
-    lastPart: ''
+    firstPartOfLink: 'https://tracktrace.dpd.com.pl/parcelDetails?typ=1&p1=',
+    lastPartOfLink: ''
 }, {
     name: 'dhl',
-    firstPart: 'https://www.dhl.com/pl-pl/home/tracking/tracking-parcel.html?submit=1&tracking-id=',
-    lastPart: ''
+    firstPartOfLink: 'https://www.dhl.com/pl-pl/home/tracking/tracking-parcel.html?submit=1&tracking-id=',
+    lastPartOfLink: ''
 }, {
     name: 'raben',
-    firstPart: 'https://oftc.myraben.com/link/ShipmentInformation?ShipmentNumber=',
-    lastPart: '&Language=PL'
+    firstPartOfLink: 'https://oftc.myraben.com/link/ShipmentInformation?ShipmentNumber=',
+    lastPartOfLink: '&Language=PL'
 }, {
     name: 'gls',
-    firstPart: 'https://gls-group.com/PL/pl/sledzenie-paczek?match=',
-    lastPart: ''
+    firstPartOfLink: 'https://gls-group.com/PL/pl/sledzenie-paczek?match=',
+    lastPartOfLink: ''
 }, {
     name: 'fedex',
-    firstPart: 'https://www.fedex.com/pl-pl/online/domestic-tracking.html#/preview?packages=',
-    lastPart: `&trackingKey=`
+    firstPartOfLink: 'https://www.fedex.com/pl-pl/online/domestic-tracking.html#/preview?packages=',
+    lastPartOfLink: `&trackingKey=`
 }, {
     name: 'pekaes',
-    firstPart: 'https://www.pekaes.pl/pl/dla-klienta.html?ShNumber=',
-    lastPart: ''
+    firstPartOfLink: 'https://www.pekaes.pl/pl/dla-klienta.html?ShNumber=',
+    lastPartOfLink: ''
 }]
 const showAlert = (e) => {
     alertBox.classList.remove('hide')
-    alertInfo.innerText="Wprowadź numer przesyłki"
-setTimeout(() => {
-    alertBox.classList.add('hide')
-}, 1000);
-
+    alertInfo.innerText = "Wprowadź numer przesyłki"
+    setTimeout(() => {
+        alertBox.classList.add('hide')
+    }, 1000);
 }
 
-const getName = (e) => {
+const getBrandName = (e) => {
     const name = e.getAttribute('id')
     return name
 }
-const getPartsOfLink = (name) => deliveryNames.map(el => {
+const getPartsOfLink = (name) => courierCompanies.map(el => {
     for (const key in el) {
         if (el[key] === name) {
-            return firstPart = el.firstPart, lastPart = el.lastPart
+            return firstPartOfLink = el.firstPartOfLink, lastPartOfLink = el.lastPartOfLink
         }
     }
 })
 
-const makelink = (firstPart, lastPart) => {
-    const number = input.value.replace(/\s/g, '')
-    if (number === '') {
+const makelink = (firstPartOfLink, lastPartOfLink) => {
+    const TrackingNumber = input.value.replace(/\s/g, '')
+    if (TrackingNumber === '') {
         showAlert()
         return false
     }
-    const newLink = firstPart + number + lastPart
+    const newLink = firstPartOfLink + TrackingNumber + lastPartOfLink
     return newLink
 }
 
 const copyNewLink = (e) => {
-    getPartsOfLink(getName(e.target))
-    const newLink = makelink(firstPart, lastPart)
+    getPartsOfLink(getBrandName(e.target))
+    const newLink = makelink(firstPartOfLink, lastPartOfLink)
     if (newLink === false) {
         return
     }
-    navigator.clipboard.writeText(makelink(firstPart, lastPart))
+    navigator.clipboard.writeText(makelink(firstPartOfLink, lastPartOfLink))
     info.innerHTML = `<p><b>Skopiowałeś do schowka poniższy link do trackingu </b></p><p><a href="${newLink}" target="_blank">${newLink}</a>
     </p> `
     //     setTimeout(() => {
