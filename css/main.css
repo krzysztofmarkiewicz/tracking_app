@@ -228,35 +228,35 @@ h1 span:nth-child(8) {
 }
 
 #inpost {
-  background-image: url("/images/inpost.png");
+  background-image: url("../images/inpost.png");
 }
 
 #dpd {
-  background-image: url("/images/dpd.png");
+  background-image: url("../images/dpd.png");
 }
 
 #dhl {
-  background-image: url("/images/dhl.png");
+  background-image: url("../images/dhl.png");
 }
 
 #pocztex {
-  background-image: url("/images/pocztex.png");
+  background-image: url("../images/pocztex.png");
 }
 
 #raben {
-  background-image: url("/images/raben.png");
+  background-image: url("../images/raben.png");
 }
 
 #gls {
-  background-image: url("/images/gls.png");
+  background-image: url("../images/gls.png");
 }
 
 #fedex {
-  background-image: url("/images/fedex.png");
+  background-image: url("../images/fedex.png");
 }
 
 #ups {
-  background-image: url("/images/ups.png");
+  background-image: url("../images/ups.png");
 }
 
 .info {
