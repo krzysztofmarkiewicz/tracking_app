@@ -1,0 +1,94 @@
+@charset "UTF-8";
+.settings {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 113, 174);
+  color: white;
+  text-align: center;
+  z-index: 100;
+}
+.settings__boxes {
+  width: 80%;
+  height: 80%;
+}
+.settings__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.settings__header {
+  margin: 2em 0 0.2em 0;
+  font-size: 2rem;
+}
+.settings__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.settings__btn {
+  width: 150px;
+  margin: 1em;
+  padding: 0.4em 0.8em;
+  border: 0.1em solid white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.settings__btn:hover {
+  background-color: green;
+}
+.settings__btn--active {
+  background-color: green;
+}
+.settings__btn--disabled {
+  background-color: rgb(103, 103, 103);
+  color: rgb(140, 140, 140);
+}
+.settings__btn--disabled:hover {
+  position: relative;
+  background-color: rgb(103, 103, 103);
+  cursor: default;
+}
+.settings__btn--disabled:hover::after {
+  content: "obecnie nie działa";
+  color: white;
+  position: absolute;
+  z-index: 22;
+  top: -20px;
+  left: 10px;
+  text-align: center;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+.hide {
+  display: none;
+}/*# sourceMappingURL=settings.css.map */

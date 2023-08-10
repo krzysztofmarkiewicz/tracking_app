@@ -6,34 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurierzy</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap">
-    <link rel="stylesheet" href="./main.css">
+    <script src="https://kit.fontawesome.com/b7615cb9e7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body>
     <div class="wrapApp">
+
+
+        <div class="settingsBtn"><svg role="button" aria-label="Ustawienia" aria-pressed="false" tabindex="0"
+                class="settingsBtn__icon" xmlns="http://www.w3.org/2000/svg" height="3em"
+                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <style>
+                    svg {
+                        fill: #ffffff
+                    }
+                </style>
+                <path
+                    d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+            </svg></div>
         <div class="header">
             <h1><span>T</span><span>r</span><span>a</span><span>c</span><span>k</span><span>i</span><span>n</span><span>g</span>
             </h1>
         </div>
-        <input type="text" name="" id="" placeholder="Wprowadź numer przesyłki">
-        <div class="buttons">
-            <button id="inpost" class="brand-btn" aria-label="inpost"></button>
-            <button id="dpd" class="brand-btn"></button>
-            <button id="dhl" class="brand-btn"></button>
-            <button id="pocztex" class="brand-btn"></button>
-            <button id="raben" class="brand-btn"></button>
-            <button id="gls" class="brand-btn"></button>
-            <button id="fedex" class="brand-btn"></button>
-            <button id="pekaes" class="brand-btn"></button>
+        <input type="text" name="" class="inputNoPackage hide" placeholder="Wprowadź numer przesyłki">
+        <button class="inteligentBtn hide">Skopiuj link</button>
+        <div class="buttons hide">
+            <button id="inpost" class="brandBtn brandBtn--rotate"></button>
+            <button id="dpd" class="brandBtn brandBtn--rotate"></button>
+            <button id="dhl" class="brandBtn brandBtn--rotate"></button>
+            <button id="pocztex" class="brandBtn brandBtn--rotate"></button>
+            <button id="raben" class="brandBtn brandBtn--rotate"></button>
+            <button id="gls" class="brandBtn brandBtn--rotate"></button>
+            <button id="fedex" class="brandBtn brandBtn--rotate"></button>
+            <button id="ups" class="brandBtn brandBtn--rotate"></button>
         </div>
         <div class="info hide"></div>
     </div>
-    <div class="alertWrap hide">
-            <p class="alert"></p>
+
+    <div class="settings hide">
+        <button class="closeBtn">Zamknij</button>
+        <div class="settings__boxes">
+            <div class="settings__box">
+                <div class="settings__header">Tryb działania:</div>
+                <div class="settings__btns" data-mode="operatingMode">
+                    <div type="submit" class="settings__btn" data-mode="standard">standardowy</div>
+                    <div type="submit" class="settings__btn" data-mode="withoutInput">bez wyszukiwarki</div>
+                    <div type="submit" class="settings__btn" data-mode="intelligent">intligentny</div>
+                </div>
+            </div>
+            <div class="settings__box">
+                <div class="settings__header">Autoamtyczne otwieranie strony z trackingiem</div>
+                <div class="settings__btns" data-mode="autoOpenLink">
+                    <div type="submit" class="settings__btn" data-mode="autoOpenLinkOff">wyłączone</div>
+                    <div type="submit" class="settings__btn" data-mode="autoOpenLinkOn">włączone</div>
+                </div>
+
+            </div>
+            <div class="settings__box">
+                <div class="settings__header">Ustawienie wyświetlania:</div>
+                <div class="settings__btns" data-mode="darkMode">
+                    <div type="submit" class="settings__btn" data-mode="darkModeOff">tryb jasny</div>
+                    <div type="submit" class="settings__btn settings__btn--disabled" data-mode="darkModeOn">tryb ciemny
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 
-    <script src="./main.js"></script>
+    <div class="alert hide">
+        <p class="alert__info"></p>
+    </div>
+
+
+    <!-- <div class="testNumbers" style="color: white">
+        <p>NUMERY DO TESTOWANIA</p>
+        <p>POCZTEX PX6026993942</p>
+        <p>INPOST: 123456781234567812345678</p>
+        <p>RABEN: 616384411213126</p>
+        <p>DHL: 26098903254</p>
+        <p>DPD: 1000591138054U</p>
+        <p>UPS:1Z0VW7297991806453</p>
+        <p>FEDEX: </p>
+        <p>GLS: 50886134919</p>
+    </div> -->
+
+    <script src="/js/settings.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
